@@ -14,7 +14,7 @@ void* main2(void* p);
 
 int main(void)
 {
-	nacl_io_init();
+	//nacl_io_init();
 	pthread_t main2_thread;
 	if(pthread_create(&main2_thread, NULL, main2, NULL)) {
 		fprintf(stderr, "Error creating thread\n");
@@ -42,7 +42,7 @@ void* main2(void* p)
     error = getaddrinfo("www.google.com", NULL, NULL, &result);
     if (error != 0 ) {   
         if (error == EAI_SYSTEM) {
-            fprintf(stdout,"getaddrinfo error EAI_SYSTEM in syscall %s\n", strerror(errno));
+            //fprintf(stdout,"getaddrinfo error EAI_SYSTEM in syscall %s\n", strerror(errno));
         } else {
             fprintf(stderr, "error in getaddrinfo: %s\n", gai_strerror(error));
         }   

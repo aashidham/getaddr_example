@@ -26,10 +26,12 @@ hostname: pc-in-x63.1e100.net
 hostname: pc-in-x63.1e100.net
 Could join thread
 </pre>
-This is the correct output, and I can't replicate it inside PNaCl. I think I have accomplished all the requirements for the use of the nacl_io library: https://developer.chrome.com/native-client/devguide/coding/nacl_io
+This is the correct output, and I can't replicate it inside PNaCl. I think I have accomplished all the requirements for the use of the nacl_io library: https://developer.chrome.com/native-client/devguide/coding/nacl_io I've done Google has asked for:
+
 I link the application with <code>-lnacl_io</code>
 
 I call <code>nacl_io_init</code> at startup.
 
 I make sure socket API calls from the background thread.
+
 
