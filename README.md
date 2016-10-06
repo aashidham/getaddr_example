@@ -13,7 +13,7 @@ getaddrinfo error EAI_SYSTEM in syscall Success
 The last line of the output comes from line 45 in <code>main.c</code>, and I'm not sure why.
 
 # getaddr_example run main.c natively
-1. Comment out line 45 and line 17, both lines come from the pnacl toolchain.
+1. Comment out line 45 and line 17 from <code>main.c</code>, both lines come from the pnacl toolchain.
 2. Run <pre>g++ main.c -pthread</pre>
 3. Run <code>a.out</code> and you should see the correct output:<pre>MacBookPro:~/getaddr_example$ ./a.out
 Could create thread
@@ -27,7 +27,9 @@ hostname: pc-in-x63.1e100.net
 Could join thread
 </pre>
 This is the correct output, and I can't replicate it inside PNaCl. I think I have accomplished all the requirements for the use of the nacl_io library: https://developer.chrome.com/native-client/devguide/coding/nacl_io
-
 I link the application with <code>-lnacl_io</code>
+
 I call <code>nacl_io_init</code> at startup.
+
 I make sure socket API calls from the background thread.
+
