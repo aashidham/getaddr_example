@@ -13,6 +13,8 @@ getaddrinfo error EAI_SYSTEM in syscall Success
 You need to use the private IP address of your computer (you can look this up on <code>ifconfig</code>). You cannot use localhost or 127.0.0.1 because opening TCP sockets aren't allowed from these places.
 The third-to-last line of the output comes from line 45 in <code>main.c</code>, and I'm not sure why.
 
+As a control, to see that it is possible to open TCP sockets from NaCl, download https://github.com/aashidham/nacl_io_example, run another static file server on port 8081, and navigate to 192.168.1.124:8081. You should be able to run gethostbyname under "Socket Operations:" and see a successful output.
+
 # getaddr_example run main.c natively
 1. Comment out line 45 and line 17 from <code>main.c</code>, both lines come from the pnacl toolchain.
 2. Run <pre>g++ main.c -pthread</pre>
